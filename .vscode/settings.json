@@ -1,0 +1,10 @@
+{
+    "editor.fontFamily": "Fira Code",
+    "editor.fontSize": 18,
+    "editor.fontLigatures": true,
+    "cmake.configureOnOpen": false,
+    "files.associations": {
+        "utility": "cpp",
+        "vector": "cpp"
+    }
+}
