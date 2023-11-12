@@ -6,5 +6,6 @@
     "files.associations": {
         "utility": "cpp",
         "vector": "cpp"
-    }
+    },
+    "code-runner.runInTerminal": true
 }
