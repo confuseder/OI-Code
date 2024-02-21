@@ -5,15 +5,7 @@ ColumnLimit: 0
 IndentWidth: 4
 AccessModifierOffset: -2
 NamespaceIndentation: All
-AlignAfterOpenBracket: Align
-AlignArrayOfStructures: None
-AlignConsecutiveMacros: None
-AlignConsecutiveAssignments: true
-AlignConsecutiveBitFields: None
-AlignConsecutiveDeclarations: None
-AlignEscapedNewlines: Right
-AlignOperands: true
-AlignTrailingComments: true
+AlignOperands: AlignAfterOperator
 AllowShortLoopsOnASingleLine: true
 AllowShortBlocksOnASingleLine: true
 AllowShortFunctionsOnASingleLine: Empty
@@ -26,7 +18,8 @@ BinPackArguments: false
 BinPackParameters: false
 BreakBeforeBinaryOperators: All
 PackConstructorInitializers: NextLine
-MaxEmptyLinesToKeep: 1
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
 KeepEmptyLinesAtTheStartOfBlocks: true
 IncludeCategories:
   - Regex: 'testlib\.h'
@@ -45,3 +38,4 @@ IncludeCategories:
     Priority: 3
     SortPriority: 0
     CaseSensitive: false
+ContinuationIndentWidth: 8
