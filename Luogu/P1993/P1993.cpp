@@ -1,0 +1,80 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int n, m;
+
+vector<pair<int, int>> mp[5005];
+
+int        ans, dist[5005], cnt[5005];
+bool       vis[5005];
+queue<int> q;
+
+int main() {
+
+    // freopen("P1993.in", "r", stdin);
+    // freopen("P1993.out", "w", stdout);
+
+    cin >> n >> m;
+
+    for (int i = 1; i <= m; i++) {
+        int op, u, v, w;
+        cin >> op;
+
+        switch (op) {
+            case 1: {
+                cin >> u >> v >> w;
+                mp[u].emplace_back(v, -w);
+            } break;
+            case 2: {
+                cin >> u >> v >> w;
+                mp[v].emplace_back(u, w);
+            } break;
+            case 3: {
+                cin >> u >> v;
+                mp[u].emplace_back(v, 0);
+                mp[v].emplace_back(u, 0);
+            }
+        }
+    }
+
+    for (int i = 1; i <= n; i++) {
+        mp[n + 1].emplace_back(i, 0);
+    }
+
+    memset(dist, 0x3f, sizeof(dist));
+    dist[n + 1] = 0, vis[n + 1] = true, cnt[n + 1]++;
+    q.push(n + 1);
+
+    while (!q.empty()) {
+        int now = q.front();
+        q.pop();
+        vis[now] = false;
+
+        for (auto [i, w] : mp[now]) {
+            if (dist[now] + w < dist[i]) {
+                dist[i] = dist[now] + w;
+
+                if (!vis[i]) {
+                    vis[i] = true;
+                    q.push(i);
+
+                    cnt[i]++;
+
+                    if (cnt[i] > n) {
+                        cout << "No" << endl;
+                        return 0;
+                    }
+                }
+            }
+        }
+    }
+
+    cout << "Yes" << endl;
+
+    // fclose(stdin);
+    // fclose(stdout);
+
+    // system("pause");
+
+    return 0;
+}
