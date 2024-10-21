@@ -2,10 +2,15 @@
     "editor.fontFamily": "Fira Code",
     "editor.fontSize": 18,
     "editor.fontLigatures": true,
-    "cmake.configureOnOpen": false,
+    "terminal.integrated.fontFamily": "Fira Code",
+    "terminal.integrated.fontSize": 16,
     "files.associations": {
         "utility": "cpp",
         "vector": "cpp"
     },
-    "code-runner.runInTerminal": true
+    "C_Cpp.default.compilerPath": "/usr/bin/clang++",
+    "C_Cpp.default.compilerArgs": [
+        "--std=c++20",
+        "-O2"
+    ]
 }
